@@ -1,0 +1,71 @@
+<div class="page-container">
+	<div class="form-container">
+		<div class="submit-form">
+
+			<div *ngIf="!showModal">
+
+				<div>
+					<h4>Agregar Curso</h4>
+					<br>
+				</div>
+
+				<div class="form-group">
+					<label for="title">Nombre</label>
+					<input class="form-control" type="text" class="form-control" id="title" required
+						[(ngModel)]="curso.nombre" name="title" />
+					<div *ngIf="nombreRequeridoError" class="text-danger">El campo nombre es obligatorio.</div>
+				</div>
+
+				<div class="form-group">
+					<label for="fechaInicio">Fecha inicio</label>
+					<input class="form-control" [class.error-input]="!validateFechaInicio()" id="fechaInicio" required
+						[(ngModel)]="curso.fechaInicio" name="fechaInicio" type="date" placeholder="dd/mm/yyyy"
+						pattern="\d{2}/\d{2}/\d{4}" />
+					<div *ngIf="!validateFechaInicio()" class="text-danger">La fecha de inicio debe ser mayor que la
+						fecha
+						actual.</div>
+				</div>
+
+				<div class="form-group">
+					<label for="content">Docente</label>
+					<select class="form-control" name="docente" id="docente" [(ngModel)]="curso.idDocente">
+						<option *ngFor="let docente of docentes" [value]="docente.id">{{ docente.nombre }}</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="content">Tema</label>
+					<select class="form-control" name="tema" id="tema" [(ngModel)]="curso.tema.id"
+						(ngModelChange)="onTemaChange()">
+						<option *ngFor="let tema of temas" [value]="tema.id">{{ tema.nombre }}</option>
+					</select>
+					<div *ngIf="temaRequeridoError" class="text-danger">El campo tema es obligatorio.</div>
+				</div>
+
+				<div class="form-group">
+					<label>Materiales</label>
+					<ul class="centered-materials-list">
+						<li *ngFor="let material of materialesPorTema">
+							{{ material.titulo }}
+						</li>
+					</ul>
+				</div>
+
+
+				<button (click)="openSuccessModal()" class="add-button">Guardar</button>
+
+			</div>
+			<div *ngIf="showModal" class="centered-materials-list">
+				<div class="modal-content">
+					<h4>Curso guardado!</h4>
+					<img src="https://png.pngtree.com/png-clipart/20221012/original/pngtree-green-check-mark-icon-on-transparent-background-png-image_8679061.png">
+					<button (click)="addCurso()" class="add-button">Agregar Curso</button>
+				</div>
+			</div>
+			<div class="custom-button-container">
+			<a href="http://localhost:4200/cursos" class="custom-button">Ver Cursos</a>
+			</div>
+		</div>
+	</div>
+
+</div>

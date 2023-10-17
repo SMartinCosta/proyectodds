@@ -1,0 +1,90 @@
+<div *ngIf="viewMode; else editable" class="course-details">
+	<div *ngIf="currentElement.id">
+		<h4>Curso del Instituto Educativo</h4>
+		<div>
+			<label><strong>Nombre:</strong></label> {{ currentElement.nombre }}
+		</div>
+		<div>
+			<label><strong>Fecha inicio:</strong></label>
+			{{ currentElement.fechaInicio | date: 'dd/MM/yyyy' }}
+		</div>
+		<div>
+			<label><strong>Docente:</strong></label>
+			{{ currentElement.idDocente === 1 ? 'Sergio Viera' : currentElement.idDocente === 2 ? 'Santiago Raggazzo' :
+			currentElement.idDocente === 3 ? 'Marcelo Badino' : 'Desconocido' }}
+		</div>
+		<div>
+			<label><strong>Tema:</strong></label>
+			{{ currentElement.tema == null ? "-": currentElement.tema.nombre }}
+		</div>
+
+		<div *ngIf="currentElement.tema" class="course-theme-id">
+			{{ asignarTemaId(currentElement.tema.id) }}
+		</div>
+
+
+		<div>
+			<label><strong>Materiales:</strong></label>
+			<ul>
+				<li *ngFor="let material of materialesTema" class="material-list-item">
+					<input type="radio" [value]="material.id" disabled>
+					{{ material.titulo }}
+
+				</li>
+			</ul>
+		</div>
+
+		<a class="badge badge-warning" routerLink="/cursos/{{ currentElement.id }}">
+			Editar Curso
+		</a>
+	</div>
+	<div *ngIf="!currentElement">
+		<br />
+		<p>Please click on a Post...</p>
+	</div>
+</div>
+
+
+
+
+
+<ng-template #editable>
+	<div *ngIf="currentElement.id" class="edit-form">
+		<h4>Curso del Instituto Educativo</h4>
+		<form>
+			<div class="form-group">
+				<label for="title">Nombre del Curso</label>
+				<input type="text" class="form-control" id="title" [(ngModel)]="currentElement.nombre" name="title" />
+			</div>
+			<div class="form-group">
+				<label for="description">Fecha inicio:</label>
+				<input type="date" class="form-control" id="description" [(ngModel)]="currentElement.fechaInicio"
+					name="description" />
+			</div>
+			<div class="form-group">
+				<label><strong>Docente:</strong></label>
+				{{ currentElement.idDocente === 1 ? 'Sergio Viera' : currentElement.idDocente === 2 ? 'Santiago
+				Raggazzo' : currentElement.idDocente === 3 ? 'Marcelo Badino' : 'Desconocido' }}
+			</div>
+		</form>
+		
+		
+		<div class="custom-button-container">
+		<a (click)="regresar()" class="badge badge-warning" target="_blank" class="custom-button">Volver al Listado</a>
+		<button type="submit" class="badge badge-success mb-2" (click)="updateElement()" id="actualizar-button" class="custom-button">
+			Actualizar Curso
+		</button>
+		</div>
+		
+		
+		<div *ngIf="showModal" class="centered-materials-list">
+			<div class="modal-content">
+				<h4>Curso actualizado!</h4>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="!currentElement.id">
+		<br />
+		<p>Elemento no encontrado...</p>
+	</div>
+</ng-template>

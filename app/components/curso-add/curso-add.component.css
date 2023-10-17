@@ -1,0 +1,143 @@
+/* Estilo para el contenedor del mensaje de éxito */
+/* Estilo para el contenedor del mensaje de éxito */
+.success-message {
+  background-color: #DEE6FD;
+  padding: 10px;
+  text-align: center;
+  min-height: 50vh; /* Establece una altura mínima del 50% del alto de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* Estilo para el botón "Add" */
+.add-button {
+  background-color: rgb(17, 126, 2);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  max-width: 200px; /* Establece un ancho máximo */
+  margin: 0 auto; /* Centra horizontalmente el botón */
+}
+
+
+.add-button:hover {
+  background-color: darkblue;
+}
+
+.submit-form {
+  width: 80%; /* Ocupa el 100% del ancho del contenedor del formulario */
+  /* Otros estilos de tu formulario */
+  background-color: #FFD96A; /* Color de fondo para el formulario */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 20px;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Esto asegura que ocupe toda la altura de la pantalla */
+}
+
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0; /* Deja esta propiedad como está si quieres centrar horizontalmente */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  z-index: 1;
+}
+
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 20px;
+  max-width: 40%; /* Limita el ancho del contenido */
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -0%);
+}
+
+.modal-content img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen al 100% del modal */
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+.modal-content button.add-button {
+  margin-top: 10px;
+}
+
+.modal-content h4 {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.page-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFECB3; /* Color de fondo para el área fuera del formulario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Asegura que el formulario esté encima del fondo de color */
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+  width: 80%; /* Ajusta el ancho del contenedor del formulario según tus necesidades */
+  display: flex;
+  justify-content: center;
+  position: relative; 
+}
+
+.centered-materials-list {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0; /* Elimina el relleno predeterminado de la lista */
+  text-align: center; /* Centra el contenido de la lista */
+}
+
+.centered-materials-list li {
+  margin: 10px 0; /* Espacio entre elementos */
+  display: block; /* Establece elementos de lista como bloques para que se muestren uno debajo del otro */
+}
+
+.custom-button {
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
+
+.custom-button-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+

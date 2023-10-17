@@ -1,0 +1,102 @@
+/* Estilos generales */
+.course-details, .edit-form {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #FFECB3;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-details h4, .edit-form h4 {
+  color: #5D6D7E;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Estilos para los detalles del curso */
+.course-details label, .edit-form label {
+  font-weight: bold;
+  color:#34495E;
+}
+
+.course-details .badge {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* Estilos para la lista de materiales */
+.material-list-item {
+  list-style-type: none;
+  margin-bottom: 5px;
+  color: #34495E;
+  font-size: 16px;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 20px;
+  max-width: 40%; /* Limita el ancho del contenido */
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -0%);
+}
+
+.modal-content img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen al 100% del modal */
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.custom-button-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.custom-button {
+  display: inline-block;
+  text-align: left;
+  font-size: 14px; /* Reduce el tamaño del texto */
+  text-decoration: none;
+  padding: 5px 10px; /* Reduce el padding para hacerlo más pequeño */
+  background-color: #007bff; /* Establece el color azul */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px; /* Aumenta el espacio entre los botones */
+}
+
+.custom-button2 {
+  display: inline-block;
+  text-align: left;
+  font-size: 14px; /* Reduce el tamaño del texto */
+  text-decoration: none;
+  padding: 5px 10px; /* Reduce el padding para hacerlo más pequeño */
+  background-color: rgb(17, 126, 2); /* Establece el color verde */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px; /* Aumenta el espacio entre los botones */
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
+
+#actualizar-button {
+  background-color: rgb(0, 124, 12); /* Establece el color verde */
+}
+
+#actualizar-button:hover {
+  background-color: #149B0B;
+}
+
